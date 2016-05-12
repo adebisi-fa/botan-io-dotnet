@@ -46,8 +46,8 @@ A .Net implementation of the botan.io analytics and url shortening API for Teleg
     botan.Track(
       "CommandOrders",
       new {
-        before_last_command: new {
-          last_command: current_command
+        before_last_command = new {
+          last_command = current_command
         }
       },
       "1234567890"
