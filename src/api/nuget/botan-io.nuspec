@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <package >
   <metadata>
-    <id>BotanIO</id>
+    <id>BotanIO.Net</id>
     <version>1.0.0</version>
-    <title>Botan IO Api for .Net</title>
+    <title>Botan IO API for .Net</title>
     <authors>Adebisi Foluso A.</authors>
     <owners>Adebisi Foluso A.</owners>
     <licenseUrl>https://github.com/adebisi-fa/botan-io-dotnet/blob/master/LICENSE</licenseUrl>
@@ -11,7 +11,7 @@
     <iconUrl>http://uploads.webflow.com/565d5a0cdee07e0131e751d2/565d5a0d6555090131ce1561_botan_logo.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>botan.io API implementation for .Net Telegram Bot developers.</description>
-    <releaseNotes>Complete implementation of (a) Basic and Advance analytics via the .Track() API method; (b) Url Shortener (telgr.me) API method.</releaseNotes>
+    <releaseNotes>Complete implementation of the Analytics and the Url Shortener (telgr.me) API methods.</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>Botan IO .Net URL Shortner telgrme</tags>
     <dependencies>
