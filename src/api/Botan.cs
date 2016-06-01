@@ -31,7 +31,7 @@ namespace BotanIO.Api
         public string ShortenUrl(string url, string userIdsSeparatedWithComma)
         {
             return _client.GetStringAsync(
-                $"s/?token={_botanToken}&url={url}&user_ids={userIdsSeparatedWithComma}"
+                $"s/?token={_botanToken}&url={Uri.EscapeDataString(url)}&user_ids={userIdsSeparatedWithComma}"
             ).Result;
         }
 
@@ -59,7 +59,7 @@ namespace BotanIO.Api
         /// <summary>
         /// Tracks a date cohorts (daily, weekly, monthly, and years) for an event.
         /// </summary>
-        /// <param name="eventName">The event name.</param>
+        /// <param name="eventName">The event name.</param>``
         /// <param name="eventDate">The event date.</param>
         /// <param name="userId">The user who triggers the event.</param>
         /// <returns></returns>
