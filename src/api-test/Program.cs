@@ -1,8 +1,6 @@
 ﻿using BotanIO.Api;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Threading.Tasks;
 
 namespace api_test
 {
@@ -10,22 +8,23 @@ namespace api_test
     {
         static void Main(string[] args)
         {
-            var botan = new Botan("botan-io-token-goes-here");
+            var botan = new Botan("JK-t81LYif9MoqPTyiFKQ2llI-oufur8");
 
-            TrackHundredUniqueUsers(botan);
-            ShortenUrl(botan);
+            TrackHundredUniqueUsers(botan).Wait();
+            ShortenUrl(botan).Wait();
         }
 
-        private static void ShortenUrl(Botan botan)
+        private static async Task ShortenUrl(Botan botan)
         {
-            botan.ShortenUrl("http://telegram.com", DateTime.UtcNow.Ticks.ToString());
+            var shortenedUrl = await botan.ShortenUrlAsync("http://telegram.com", DateTime.UtcNow.Ticks.ToString());
+            Console.WriteLine($"http://telegram.com -> {shortenedUrl}");
         }
 
-        private static void TrackHundredUniqueUsers(Botan botan)
+        private static async Task TrackHundredUniqueUsers(Botan botan)
         {
             for (int i = 0; i < 100; i++)
-                botan.Track(
-                    "FirstTimer",
+                await botan.TrackAsync(
+                    "TestAsyncApi",
                     DateTime.UtcNow.AddDays(-new Random().Next(1, 365)),
                     DateTime.UtcNow.Ticks.ToString()
                 );
